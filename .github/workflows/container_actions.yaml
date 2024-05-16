@@ -26,6 +26,11 @@ jobs:
       # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
         uses: actions/checkout@v4
+        with:
+          repository: KaairaTechsoft/github-action-demo
+          ref: '' # The branch, tag, or SHA to checkout (defaults to the reference or SHA for the triggering event)
+          token: ${{ secrets.GITHUB_TOKEN }} # Personal access token (PAT) for authentication
+          ssh-key: ${{ secrets.SSH_KEY }} # SSH key for authentication
 
       # Performs a clean installation of all dependencies in the `package.json` file
       # For more information, see https://docs.npmjs.com/cli/ci.html
